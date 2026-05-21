@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shamir Khan — Computer Science student and full-stack developer building performant web systems, AI dispatch engines, and production-ready applications.">
+    <meta name="author" content="Shamir Khan">
+    <meta property="og:title" content="Shamir Khan | Software Developer">
+    <meta property="og:description" content="Full-stack developer portfolio — frontend, backend, and systems design.">
+    <meta property="og:type" content="website">
+    <title>Shamir Khan | Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23000000'/%3E%3Ctext x='50%25' y='65%25' font-size='42' font-family='system-ui,-apple-system,sans-serif' font-weight='600' fill='%23ffffff' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header id="header" class="global-nav" role="banner">
+        <div class="nav-container">
+            <a href="#" class="brand-wordmark" aria-label="Shamir Khan — home">SK</a>
+
+            <button id="mobile-menu-toggle" class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+                <span class="line line-top"></span>
+                <span class="line line-bottom"></span>
+            </button>
+
+            <nav id="site-nav" class="nav-links" aria-label="Primary">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="assets/Shamir_Khan_SER.pdf" class="nav-cta-btn" download>Resume</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="hero" class="scene scene-dark hero-chapter" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <div class="hero-text-block reveal">
+                    <span class="eyebrow">Wilfrid Laurier University</span>
+                    <h1 id="hero-title" class="hero-headline">Software Developer.</h1>
+                    <p class="hero-lead">Shamir Khan. I build frontend &amp; backend systems.</p>
+                    <p class="hero-summary">
+                        Computer Science student and full-stack developer specializing in performant web applications, custom dispatch engines, and robust production systems.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="assets/Shamir_Khan_SER.pdf" class="btn btn-primary" download>Download Resume</a>
+                        <a href="#contact" class="text-link text-link-on-dark">Contact Me <span class="arrow" aria-hidden="true">→</span></a>
+                    </div>
+                    <dl class="hero-metrics" aria-label="Impact metrics">
+                        <div class="metric">
+                            <dt class="metric-value">70%</dt>
+                            <dd class="metric-label">Acquisition time cut</dd>
+                        </div>
+                        <div class="metric">
+                            <dt class="metric-value">40%</dt>
+                            <dd class="metric-label">Job volume growth</dd>
+                        </div>
+                        <div class="metric">
+                            <dt class="metric-value">$50K+</dt>
+                            <dd class="metric-label">Funds raised</dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="hero-visual reveal reveal-delay" aria-hidden="true">
+                    <img src="assets/hero_tech_graphic.png" alt="" width="640" height="640" class="hero-graphic" decoding="async">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="scene scene-parchment editorial-chapter" aria-labelledby="about-title">
+            <div class="container">
+                <div class="editorial-grid">
+                    <header class="editorial-left reveal">
+                        <span class="eyebrow">Education</span>
+                        <h2 id="about-title" class="display-headline">Rigorous studies. Engineered mindset.</h2>
+                    </header>
+                    <div class="editorial-right reveal reveal-delay">
+                        <article class="utility-card education-card">
+                            <span class="eyebrow">Graduating April 2028</span>
+                            <h3 class="card-title">Bachelor of Science in Computer Science</h3>
+                            <p class="institution">Wilfrid Laurier University</p>
+                            <p class="location">Waterloo, ON</p>
+                            <p class="body-copy">Core studies in computational fundamentals, systems design, and software engineering — translating theory into clean, reliable, production-ready applications.</p>
+                            <p class="body-copy"><strong>Core CS:</strong> Data Structures, OOP, Discrete Math, Algorithms, Computer Architecture, Digital Electronics.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="scene scene-light editorial-chapter" aria-labelledby="projects-title">
+            <div class="container">
+                <header class="section-intro reveal">
+                    <span class="eyebrow">Projects</span>
+                    <h2 id="projects-title" class="display-headline">Designed for purpose. Built for scale.</h2>
+                    <div class="segmented-control" role="tablist" aria-label="Filter projects">
+                        <button type="button" class="segment active" role="tab" aria-selected="true" data-filter="all">All</button>
+                        <button type="button" class="segment" role="tab" aria-selected="false" data-filter="fullstack">Full-Stack</button>
+                        <button type="button" class="segment" role="tab" aria-selected="false" data-filter="backend">Backend</button>
+                        <button type="button" class="segment" role="tab" aria-selected="false" data-filter="web">Web</button>
+                    </div>
+                </header>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal" data-categories="backend">
+                        <span class="eyebrow">Next.js · FastAPI · Snowflake · Gemini 1.5 Pro</span>
+                        <h3 class="card-title">InstantService</h3>
+                        <p class="body-copy">Mobile-first PWA and AI dispatch engine using Gemini 1.5 Pro, Google Maps, and WebSockets for optimal service paths (20% overhead reduction), with ElevenLabs voice feedback.</p>
+                        <dl class="card-metrics">
+                            <div><dt>70%</dt><dd>Acquisition cut</dd></div>
+                            <div><dt>40%</dt><dd>Job volume growth</dd></div>
+                            <div><dt>&lt; 3m</dt><dd>Confirmations</dd></div>
+                        </dl>
+                        <a href="https://github.com/shamir-khan-dev/InstantService" class="text-link" target="_blank" rel="noopener noreferrer">Explore Code <span class="arrow" aria-hidden="true">→</span></a>
+                    </article>
+
+                    <article class="project-card reveal" data-categories="fullstack">
+                        <span class="eyebrow">React · Node.js · Express · Mongo · Arcjet</span>
+                        <h3 class="card-title">Subscription Tracker</h3>
+                        <p class="body-copy">Full-stack subscription tracker with Node.js/Express MVC API and MongoDB. JWT auth, Zod validation, and automated lifecycle notifications via Upstash Workflow and Nodemailer.</p>
+                        <dl class="card-metrics">
+                            <div><dt>JWT &amp; Zod</dt><dd>Secure auth</dd></div>
+                            <div><dt>Arcjet</dt><dd>Security shield</dd></div>
+                        </dl>
+                        <a href="https://subscription-app-lime.vercel.app/" class="text-link" target="_blank" rel="noopener noreferrer">Explore Site <span class="arrow" aria-hidden="true">→</span></a>
+                    </article>
+
+                    <article class="project-card reveal" data-categories="web">
+                        <span class="eyebrow">Next.js · TypeScript · Payload CMS</span>
+                        <h3 class="card-title">MSA Website</h3>
+                        <p class="body-copy">Community platform for event scheduling, live prayer timings, and halal directories. UI/UX consultation and navigation optimized for 250+ active members.</p>
+                        <dl class="card-metrics">
+                            <div><dt>$50K+</dt><dd>Charitable raised</dd></div>
+                            <div><dt>250+</dt><dd>Active members</dd></div>
+                        </dl>
+                        <a href="https://wlumsa.org/" class="text-link" target="_blank" rel="noopener noreferrer">Explore Site <span class="arrow" aria-hidden="true">→</span></a>
+                    </article>
+
+                    <article class="project-card reveal" data-categories="fullstack">
+                        <span class="eyebrow">HTML5 · CSS3 · JavaScript · Node.js · MongoDB</span>
+                        <h3 class="card-title">Movie Review Website</h3>
+                        <p class="body-copy">Discover movies via TMDB API and manage reviews through a custom Express REST API with MongoDB Atlas for persistent storage.</p>
+                        <dl class="card-metrics">
+                            <div><dt>TMDB API</dt><dd>Discovery</dd></div>
+                            <div><dt>MongoDB</dt><dd>Cloud storage</dd></div>
+                        </dl>
+                        <a href="https://github.com/shamir-khan-dev/movie-reviews-website" class="text-link" target="_blank" rel="noopener noreferrer">Explore Code <span class="arrow" aria-hidden="true">→</span></a>
+                    </article>
+
+                    <article class="project-card reveal" data-categories="web">
+                        <span class="eyebrow">HTML5 · CSS3 · Vanilla JavaScript</span>
+                        <h3 class="card-title">Dragon Repeller RPG</h3>
+                        <p class="body-copy">State-driven browser RPG — explore, shop, battle monsters, and defeat the final dragon with tactical combat in pure JavaScript.</p>
+                        <dl class="card-metrics">
+                            <div><dt>State-driven</dt><dd>Game engine</dd></div>
+                            <div><dt>Pure JS</dt><dd>Vanilla logic</dd></div>
+                        </dl>
+                        <a href="https://shamir-khan-dev.github.io/Front-end-game/" class="text-link" target="_blank" rel="noopener noreferrer">Play Game <span class="arrow" aria-hidden="true">→</span></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="scene scene-parchment editorial-chapter" aria-labelledby="experience-title">
+            <div class="container">
+                <div class="editorial-grid">
+                    <header class="editorial-left reveal">
+                        <span class="eyebrow">Experience</span>
+                        <h2 id="experience-title" class="display-headline">Collaborative systems. Professional execution.</h2>
+                    </header>
+                    <div class="editorial-right reveal reveal-delay">
+                        <div class="experience-list">
+                            <article class="experience-item">
+                                <span class="eyebrow">April 2026</span>
+                                <h3 class="role-title">Full-Stack Developer | Team Lead</h3>
+                                <p class="institution">ConHacks</p>
+                                <p class="body-copy">Led a team of 4 to architect InstantService, an AI-driven PWA that reduced client service-acquisition time by 70%. Built multi-weighted scoring with FastAPI and Snowflake (40% job volume increase, under-3-minute confirmations). Backend for tier-based pricing and verification via license/insurance certificates.</p>
+                                <ul class="chip-list" aria-label="Technologies">
+                                    <li>FastAPI</li><li>Snowflake</li><li>PWA</li><li>Systems Design</li>
+                                </ul>
+                            </article>
+                            <article class="experience-item">
+                                <span class="eyebrow">September 2021 — September 2022</span>
+                                <h3 class="role-title">Logistics</h3>
+                                <p class="institution">Hack the North</p>
+                                <p class="body-copy">Facilitated a 36-hour experience for 1,000+ students at Canada's largest hackathon. Managed registration, wayfinding, and demos for 827 attendees across 222 projects. Resolved operational bottlenecks with zero major schedule disruptions.</p>
+                                <ul class="chip-list" aria-label="Skills">
+                                    <li>Logistics</li><li>Operations Management</li><li>Event Planning</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="scene scene-light editorial-chapter" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="editorial-grid">
+                    <header class="editorial-left reveal">
+                        <span class="eyebrow">Skills</span>
+                        <h2 id="skills-title" class="display-headline">Languages, frameworks, and developer tools.</h2>
+                    </header>
+                    <div class="editorial-right reveal reveal-delay">
+                        <div class="skills-matrix">
+                            <div class="skill-group">
+                                <h3 class="skill-group-label">Languages</h3>
+                                <ul class="chip-list">
+                                    <li>Python</li><li>Java</li><li>C</li><li>JavaScript</li><li>TypeScript</li><li>HTML</li><li>CSS</li><li>SQL</li>
+                                </ul>
+                            </div>
+                            <div class="skill-group">
+                                <h3 class="skill-group-label">Frameworks &amp; Tools</h3>
+                                <ul class="chip-list">
+                                    <li>React.js</li><li>Next.js</li><li>PWA</li><li>FastAPI</li><li>Tailwind CSS</li><li>Docker</li><li>Git</li><li>GitHub</li><li>DigitalOcean</li><li>Arcjet</li><li>Upstash</li>
+                                </ul>
+                            </div>
+                            <div class="skill-group">
+                                <h3 class="skill-group-label">AI &amp; Data</h3>
+                                <ul class="chip-list">
+                                    <li>Gemini 1.5 Pro</li><li>ElevenLabs</li><li>Snowflake</li><li>MongoDB</li><li>Generative AI</li><li>Data Warehousing</li>
+                                </ul>
+                            </div>
+                            <div class="skill-group">
+                                <h3 class="skill-group-label">Concepts</h3>
+                                <ul class="chip-list">
+                                    <li>System Architecture</li><li>REST APIs</li><li>OOP</li><li>Data Structures</li><li>Algorithms</li><li>Automated Workflows</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="scene scene-dark editorial-chapter" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="editorial-grid">
+                    <header class="editorial-left reveal">
+                        <span class="eyebrow">Connect</span>
+                        <h2 id="contact-title" class="display-headline display-headline-on-dark">Let's collaborate.</h2>
+                        <p class="body-copy body-copy-on-dark">Looking for a developer to architect systems or design elegant interfaces? I'm open to new opportunities.</p>
+                        <div class="contact-block">
+                            <div>
+                                <span class="eyebrow">Email</span>
+                                <a href="mailto:shamirk2121@gmail.com" class="contact-value text-link-on-dark">shamirk2121@gmail.com</a>
+                            </div>
+                            <div>
+                                <span class="eyebrow">Phone</span>
+                                <span class="contact-value">(647) 606-6063</span>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="editorial-right reveal reveal-delay">
+                        <div class="form-panel">
+                            <form id="contact-form" class="contact-form" novalidate>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" name="name" required autocomplete="name" placeholder="Name">
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="5" required placeholder="Your message…"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-submit">
+                                    <span>Send Message</span>
+                                </button>
+                            </form>
+                            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer scene-dark" role="contentinfo">
+        <div class="container footer-inner">
+            <nav class="footer-nav" aria-label="Social">
+                <a href="https://linkedin.com/in/shamir-khan-40698123b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/shamir-khan-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:shamirk2121@gmail.com">Email</a>
+            </nav>
+            <p class="fine-print">&copy; <span id="current-year">2026</span> Shamir Khan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
