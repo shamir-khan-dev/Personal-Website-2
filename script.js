@@ -224,26 +224,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ==========================================================================
-    // Resume Preview Modal (Interactive View without downloading)
+    // Resume Preview Modal (Interactive Image Canvas with Zoom & Controls)
     // ==========================================================================
     const resumeModal = document.getElementById('resume-modal');
-    const resumeIframe = document.getElementById('resume-iframe');
+    const resumeWrapper = document.querySelector('.resume-sheet-wrapper');
     const openResumeButtons = document.querySelectorAll('.open-resume-modal');
     const closeResumeButtons = document.querySelectorAll('[data-close-modal]');
-    const resumePdfPath = 'assets/Shamir_Khan_SWE_Latest.pdf#view=FitH';
+    const zoomInBtn = document.getElementById('resume-zoom-in');
+    const zoomOutBtn = document.getElementById('resume-zoom-out');
+    const zoomLevelText = document.getElementById('resume-zoom-level');
+    const copyLinkBtn = document.getElementById('resume-copy-link');
+    const copyBtnText = document.getElementById('copy-btn-text');
+
+    let currentZoom = 100;
+    const baseWidth = 820;
+
+    const applyZoom = (zoom) => {
+        currentZoom = Math.min(160, Math.max(60, zoom));
+        if (resumeWrapper) {
+            resumeWrapper.style.width = `${(baseWidth * currentZoom) / 100}px`;
+        }
+        if (zoomLevelText) {
+            zoomLevelText.textContent = `${currentZoom}%`;
+        }
+    };
+
+    if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', () => applyZoom(currentZoom + 15));
+    }
+
+    if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', () => applyZoom(currentZoom - 15));
+    }
+
+    // One-click Share / Copy direct link to resume modal
+    if (copyLinkBtn) {
+        copyLinkBtn.addEventListener('click', async () => {
+            const shareUrl = `${window.location.origin}${window.location.pathname}#resume`;
+            try {
+                if (navigator.clipboard) {
+                    await navigator.clipboard.writeText(shareUrl);
+                } else {
+                    const tempInput = document.createElement('input');
+                    tempInput.value = shareUrl;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+                if (copyBtnText) copyBtnText.textContent = 'Copied!';
+                setTimeout(() => {
+                    if (copyBtnText) copyBtnText.textContent = 'Share';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy', err);
+            }
+        });
+    }
 
     const openResume = (e) => {
-        if (e) e.preventDefault();
+        if (e && e.preventDefault) e.preventDefault();
         if (!resumeModal) return;
-        
-        // Lazy-load PDF only when opened
-        if (resumeIframe && (resumeIframe.src === 'about:blank' || !resumeIframe.src.includes('Shamir_Khan_SWE_Latest.pdf'))) {
-            resumeIframe.src = resumePdfPath;
-        }
-
         resumeModal.classList.add('active');
         resumeModal.setAttribute('aria-hidden', 'false');
         body.style.overflow = 'hidden';
+        applyZoom(100);
     };
 
     const closeResume = () => {
@@ -251,6 +296,9 @@ document.addEventListener('DOMContentLoaded', () => {
         resumeModal.classList.remove('active');
         resumeModal.setAttribute('aria-hidden', 'true');
         body.style.overflow = '';
+        if (window.location.hash === '#resume') {
+            history.replaceState(null, null, window.location.pathname);
+        }
     };
 
     openResumeButtons.forEach(btn => {
@@ -261,11 +309,16 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', closeResume);
     });
 
-    // Close on Escape key press
+    // Close on Escape
     window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && resumeModal && resumeModal.classList.contains('active')) {
             closeResume();
         }
     });
+
+    // Auto-open modal if URL has #resume hash (e.g. recruiters clicking direct link)
+    if (window.location.hash === '#resume') {
+        openResume();
+    }
 
 });
