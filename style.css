@@ -1466,3 +1466,160 @@ section {
         padding: 12px 8px;
     }
 }
+
+
+/* ==========================================================================
+   Apple Theme Toggle & Toast Notification Styles
+   ========================================================================== */
+
+/* Theme Toggle Button in Global Nav */
+.theme-toggle-btn {
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: var(--apple-dark-text);
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s var(--apple-ease), transform 0.2s;
+    outline: none;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
+}
+
+.global-nav.dark-nav .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.global-nav.dark-nav .theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.theme-icon-sun {
+    display: none;
+}
+.theme-icon-moon {
+    display: block;
+}
+
+/* When in forced Dark Mode */
+body.theme-dark {
+    --apple-white: #0a0a0c;
+    --apple-dark-text: #f5f5f7;
+    --apple-gray-bg: #161618;
+    --apple-border-soft: #2c2c2e;
+    --apple-neutral-gray: #a1a1a6;
+    background-color: #0a0a0c;
+    color: #f5f5f7;
+}
+
+body.theme-dark .light-scene-gray {
+    background-color: #121214 !important;
+    color: #f5f5f7;
+}
+
+body.theme-dark .light-scene-white {
+    background-color: #0a0a0c !important;
+    color: #f5f5f7;
+}
+
+body.theme-dark .project-card,
+body.theme-dark .education-block,
+body.theme-dark .experience-row,
+body.theme-dark .skill-category-block {
+    background: #18181b !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #f5f5f7 !important;
+}
+
+body.theme-dark .experience-row h3,
+body.theme-dark .card-title,
+body.theme-dark .section-headline {
+    color: #ffffff !important;
+}
+
+body.theme-dark .tech-chip,
+body.theme-dark .skill-chip {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #d1d1d6 !important;
+    border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+body.theme-dark .theme-icon-sun {
+    display: block;
+}
+body.theme-dark .theme-icon-moon {
+    display: none;
+}
+
+/* Copy Email Pill Button */
+.copy-email-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.copy-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-text);
+    font-size: 11px;
+    font-weight: 500;
+    color: #a1a1a6;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 3px 8px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.copy-pill-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.04);
+}
+
+.copy-pill-btn:active {
+    transform: scale(0.96);
+}
+
+/* Floating Apple-Style Toast */
+.apple-toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(30px);
+    background: rgba(28, 28, 30, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    font-family: var(--font-text);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 9999px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    z-index: 999999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s, visibility 0.25s;
+}
+
+.apple-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}

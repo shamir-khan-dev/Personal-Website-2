@@ -321,4 +321,76 @@ document.addEventListener('DOMContentLoaded', () => {
         openResume();
     }
 
+
+
+    // ==========================================================================
+    // Apple Toast Notification Engine
+    // ==========================================================================
+    const toastEl = document.getElementById('apple-toast');
+    let toastTimeout = null;
+
+    const showToast = (message, duration = 2800) => {
+        if (!toastEl) return;
+        toastEl.textContent = message;
+        toastEl.classList.add('show');
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toastEl.classList.remove('show');
+        }, duration);
+    };
+
+    // ==========================================================================
+    // Copy Email to Clipboard with Feedback
+    // ==========================================================================
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const copyEmailLabel = document.getElementById('copy-email-label');
+
+    if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const email = 'shamirk2121@gmail.com';
+            try {
+                if (navigator.clipboard) {
+                    await navigator.clipboard.writeText(email);
+                } else {
+                    const temp = document.createElement('input');
+                    temp.value = email;
+                    document.body.appendChild(temp);
+                    temp.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(temp);
+                }
+                if (copyEmailLabel) copyEmailLabel.textContent = 'Copied!';
+                showToast('Email copied to clipboard: shamirk2121@gmail.com');
+                setTimeout(() => {
+                    if (copyEmailLabel) copyEmailLabel.textContent = 'Copy';
+                }, 2000);
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    }
+
+    // ==========================================================================
+    // Dark / Light Theme Toggle System
+    // ==========================================================================
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('sk_theme');
+
+    if (savedTheme === 'dark') {
+        body.classList.add('theme-dark');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = body.classList.toggle('theme-dark');
+            localStorage.setItem('sk_theme', isDark ? 'dark' : 'light');
+            showToast(isDark ? 'Dark mode enabled' : 'System light mode enabled', 1800);
+            // Re-check sticky header appearance
+            if (typeof handleHeaderTheme === 'function') {
+                handleHeaderTheme();
+            }
+        });
+    }
+
 });
