@@ -33,7 +33,7 @@
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="assets/Shamir_Khan_SWE_Latest.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta-btn" download>Resume</a>
+                <button type="button" class="nav-cta-btn open-resume-modal" aria-label="Preview Resume">Resume</button>
             </nav>
         </div>
     </header>
@@ -52,7 +52,8 @@
                     </p>
                     
                     <div class="hero-actions">
-                        <a href="assets/Shamir_Khan_SWE_Latest.pdf" target="_blank" rel="noopener noreferrer" class="button-primary" download>Download Resume</a>
+                        <button type="button" class="button-primary open-resume-modal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:text-top;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Preview Resume</button>
+                        <a href="assets/Shamir_Khan_SWE_Latest.pdf" target="_blank" rel="noopener noreferrer" class="button-secondary" download>Download PDF</a>
                         <a href="#contact" class="button-text-link">Contact Me <span class="arrow">→</span></a>
                     </div>
 
@@ -637,5 +638,32 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+
+    <!-- Apple-Style Resume Preview Modal -->
+    <div id="resume-modal" class="resume-modal" aria-hidden="true" role="dialog" aria-labelledby="resume-modal-title">
+        <div class="resume-modal-backdrop" data-close-modal></div>
+        <div class="resume-modal-container">
+            <div class="resume-modal-header">
+                <div class="resume-modal-title-group">
+                    <h3 id="resume-modal-title" class="resume-modal-title">Shamir Khan &mdash; Resume</h3>
+                    <span class="resume-modal-badge">Verified 1-Page Master &bull; Latest</span>
+                </div>
+                <div class="resume-modal-actions">
+                    <a href="assets/Shamir_Khan_SWE_Latest.pdf" target="_blank" rel="noopener noreferrer" class="resume-modal-btn" title="Open in new tab">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <span>Open Tab</span>
+                    </a>
+                    <a href="assets/Shamir_Khan_SWE_Latest.pdf" download class="resume-modal-btn resume-modal-btn-primary" title="Download PDF">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>Download</span>
+                    </a>
+                    <button type="button" class="resume-modal-close" data-close-modal aria-label="Close modal">&times;</button>
+                </div>
+            </div>
+            <div class="resume-modal-body">
+                <iframe id="resume-iframe" src="about:blank" title="Shamir Khan Resume Preview" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

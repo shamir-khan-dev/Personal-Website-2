@@ -221,4 +221,51 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+
+    // ==========================================================================
+    // Resume Preview Modal (Interactive View without downloading)
+    // ==========================================================================
+    const resumeModal = document.getElementById('resume-modal');
+    const resumeIframe = document.getElementById('resume-iframe');
+    const openResumeButtons = document.querySelectorAll('.open-resume-modal');
+    const closeResumeButtons = document.querySelectorAll('[data-close-modal]');
+    const resumePdfPath = 'assets/Shamir_Khan_SWE_Latest.pdf#view=FitH';
+
+    const openResume = (e) => {
+        if (e) e.preventDefault();
+        if (!resumeModal) return;
+        
+        // Lazy-load PDF only when opened
+        if (resumeIframe && (resumeIframe.src === 'about:blank' || !resumeIframe.src.includes('Shamir_Khan_SWE_Latest.pdf'))) {
+            resumeIframe.src = resumePdfPath;
+        }
+
+        resumeModal.classList.add('active');
+        resumeModal.setAttribute('aria-hidden', 'false');
+        body.style.overflow = 'hidden';
+    };
+
+    const closeResume = () => {
+        if (!resumeModal) return;
+        resumeModal.classList.remove('active');
+        resumeModal.setAttribute('aria-hidden', 'true');
+        body.style.overflow = '';
+    };
+
+    openResumeButtons.forEach(btn => {
+        btn.addEventListener('click', openResume);
+    });
+
+    closeResumeButtons.forEach(btn => {
+        btn.addEventListener('click', closeResume);
+    });
+
+    // Close on Escape key press
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && resumeModal && resumeModal.classList.contains('active')) {
+            closeResume();
+        }
+    });
+
 });
